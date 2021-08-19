@@ -1,9 +1,65 @@
 import java.util.ArrayList;
 
 public class Box {
-    public static void main(String[] args) {
-        ArrayList<Fruit> orange = new ArrayList<>();
-        ArrayList<Fruit> apple = new ArrayList<>();
 
+    Fruit fruit;
+
+    public static void main(String[] args) {
+        Fruit orange1 = new Orange(15, 10.1);
+        Fruit orange2 = new Orange(14, 9.1);
+        Fruit orange3 = new Orange(12, 8.1);
+        Fruit apple1 = new Apple(15, 8.1);
+        Fruit apple2 = new Apple(7, 18.1);
+        Fruit apple3 = new Apple(1, 83.1);
+        Fruit apple4 = new Apple(19, 8.1);
+        ArrayList<Box> box1 = new ArrayList<>();
+        ArrayList<Box> box2 = new ArrayList<>();
+        ArrayList<Box> box3 = new ArrayList<>();
+        box1.add(orange1);
+        box1.add(orange2);
+        box1.add(orange3);
+//        System.out.println(box1);
+        addFruits.addFruits(box2, orange1);
+        System.out.println(box2);
+        addFruits.addFruits(box2, orange2);
+        System.out.println(box2+"\n");
+        addFruits.addFruits(box2, apple1);
+        System.out.println(box2+"\n");
+        addFruits.addFruits(box3, apple1);
+        addFruits.addFruits(box3, apple2);
+        addFruits.addFruits(box3, apple3);
+        addFruits.addFruits(box3, apple4);
+        addFruits.addFruits(box3, orange2);
+        System.out.println(getWeight(box2));
     }
+
+    /*** Добавляем фрукты в коробки и проверяем на совместимость
+     *
+     */
+    static class addFruits {
+        public static <A, F> void addFruits(ArrayList<A> arrayList, F fruit) {
+            if (arrayList.isEmpty() || arrayList.get(0).getClass() == fruit.getClass()) {
+                arrayList.add((A) fruit);
+            }
+            else System.out.println("Очнись, там хранятся " + arrayList.get(0).getClass().getName()+ ". А ты пытаешься туда засунуть " + fruit.getClass().getName()+".");
+        }
+    }
+
+
+    public static <A> double getWeight(ArrayList<A> arrayList){
+        double summ=0;
+        for (int i=0; i<arrayList.size();i++){
+//            summ+=getWeightOrange;
+            System.out.println(arrayList.get(i).getClass());
+        }
+        return summ;
+    }
+
+    //TODO надо как-то сделать для фруктов общую сумму
+    public static double getWeight(Apple fruit){
+        double summ=0;
+        summ+=fruit.getWeightApple()* fruit.weightApple;
+        return summ;
+    }
+
 }
