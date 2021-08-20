@@ -16,6 +16,12 @@ public class Apple extends Fruit{
     public double getWeight() {
         return weight;
     }
+
+    @Override
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     @Override
     public String toString() {
         return "Яблоки {" +

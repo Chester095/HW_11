@@ -18,6 +18,12 @@ public class Orange extends Fruit {
     }
 
     @Override
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+
+    @Override
     public String toString() {
         return "Апельсины {" +
                 "Кол-во=" + quantity +

@@ -1,4 +1,4 @@
-public class Fruit extends Box {
+public abstract class Fruit extends Box {
     private static int quantity;
     private static double weight;
 
@@ -7,9 +7,9 @@ public class Fruit extends Box {
         return quantity;
     }
 
-
     public double getWeight() {
         return weight;
     }
 
+    public abstract void setQuantity(int quantity);
 }
