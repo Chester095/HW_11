@@ -33,6 +33,7 @@ public class Box {
         System.out.println("Сумма " + apple1.getClass().getName() + "  " + getWeightOne(apple1));
         System.out.println("Сумма " + orange2.getClass().getName() + "  " + getWeightOne(orange2));
         System.out.println(getWeight(box3));
+        System.out.println("Сравнение двух коробок " + compare(box1,box2));
     }
 
 
@@ -57,7 +58,7 @@ public class Box {
     public static <A> double getWeight(ArrayList<A> arrayList) {
         double summ = 0;
         for (int i = 0; i < arrayList.size(); i++) {
-            summ+=getWeightOne((Fruit) arrayList.get(i));
+            summ += getWeightOne((Fruit) arrayList.get(i));
             System.out.println(arrayList.get(i));
         }
         return summ;
@@ -72,4 +73,17 @@ public class Box {
         return fruit.getWeight() * fruit.getQuantity();
     }
 
+    /*** Сравнение массы двух коробок
+     *
+     * @param arrayList1
+     * @param arrayList2
+     * @param <A>
+     * @param <B>
+     * @return
+     */
+    public static <A, B> boolean compare(ArrayList<A> arrayList1, ArrayList<B> arrayList2) {
+        boolean compare = false;
+        if (getWeight(arrayList1) == getWeight(arrayList2)) compare = true;
+        return compare;
+    }
 }
