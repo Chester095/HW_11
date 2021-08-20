@@ -1,10 +1,15 @@
 public class Fruit extends Box {
+    private static int quantity;
+    private static double weight;
 
-    public Fruit() {
-        super();
+
+    public int getQuantity() {
+        return quantity;
     }
 
-    public static void main(String[] args) {
 
+    public double getWeight() {
+        return weight;
     }
+
 }

@@ -1,25 +1,26 @@
 public class Apple extends Fruit{
-    int quantityApple;
-    double weightApple;
+    private int quantity;
+    private double weight;
 
-    public Apple(int quantityOrange, double weightOrange) {
-        this.quantityApple = quantityApple;
-        this.weightApple = weightApple;
-    }
-
-    public int getQuantityApple() {
-        return quantityApple;
-    }
-
-    public double getWeightApple() {
-        return weightApple;
+    public Apple(int quantity, double weight) {
+        this.quantity = quantity;
+        this.weight = weight;
     }
 
     @Override
+    public int getQuantity() {
+        return quantity;
+    }
+
+    @Override
+    public double getWeight() {
+        return weight;
+    }
+    @Override
     public String toString() {
         return "Яблоки {" +
-                "Кол-во=" + quantityApple +
-                ", вес=" + weightApple +
-                "} " + super.toString();
+                "Кол-во=" + quantity +
+                ", вес=" + weight +
+                "} ";
     }
 }
